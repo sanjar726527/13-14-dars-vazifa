@@ -3,6 +3,7 @@ import { Dropdown, Form } from "react-bootstrap";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
+import { FaFacebookF, FaInstagram, FaTelegramPlane } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { SlBasket } from "react-icons/sl";

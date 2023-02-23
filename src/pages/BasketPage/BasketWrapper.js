@@ -50,7 +50,7 @@ const BasketWrapper = styled.section`
   }
   .basketPage {
     width: 80%;
-    margin: 0 auto;
+    margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
     align-items: start;
@@ -110,6 +110,38 @@ const BasketWrapper = styled.section`
     }
     .btn {
       width: max-content;
+    }
+  }
+  footer {
+    background: #2c2c2c;
+    height: 300px;
+    a {
+      color: #dedede;
+    }
+    .card-footer {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      p {
+        color: #dedede;
+        white-space: nowrap;
+      }
+      .icons {
+        display: flex;
+        align-items: start;
+        flex-direction: row;
+        gap: 35px;
+        .icon {
+          fill: #dedede;
+        }
+      }
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 5px;
     }
   }
 `;
