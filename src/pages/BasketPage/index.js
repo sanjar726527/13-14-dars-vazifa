@@ -139,6 +139,33 @@ export const BasketPage = () => {
           <BiArrowBack /> Back
         </Link>
       </div>
+      <footer className="py-5">
+        <div className="container d-flex gap-5">
+          <div className="card-footer">
+            <p>© 2023 Express 24</p>
+            <div className="icons">
+              <a href="/" target={"_blank"}>
+                <FaFacebookF className="icon" />
+              </a>
+              <a href="/" target={"_blank"}>
+                <FaInstagram className="icon" />
+              </a>
+              <a href="/" target={"_blank"}>
+                <FaTelegramPlane className="icon" />
+              </a>
+            </div>
+          </div>
+          <div className="card-footer">
+            <div className="row">
+              <a href="/">About</a>
+              <a href="/">User comply</a>
+              <a href="/">Contact</a>
+              <a href="/">Answers and Questions</a>
+              <a href="/">Application to partnership</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </BasketWrapper>
   );
 };
