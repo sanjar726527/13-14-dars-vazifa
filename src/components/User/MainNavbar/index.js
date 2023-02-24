@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import StyledButton from "../MyButton";
+import StyledButton from "../../MyButton";
 import MainNavbarWrapper from "./MainNavbarWrapper";
 
 export const MainNavbar = () => {

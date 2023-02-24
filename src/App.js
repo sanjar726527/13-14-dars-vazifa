@@ -7,6 +7,9 @@ import { Drinks } from "./pages/ProductPages/Drinks";
 import { Salads } from "./pages/ProductPages/Salads";
 import { Soups } from "./pages/ProductPages/Soups";
 import { UserPage } from "./pages/UserPage";
+import { AdminPage } from "./pages/AdminPage";
+import { AddPage } from "./pages/AdminPages/AddPage";
+import { ApplicationsPage } from "./pages/AdminPages/ApplicationsPage";
 
 function App() {
   return (
@@ -19,6 +22,10 @@ function App() {
         <Route path="drinks/*" element={<Drinks />} />
       </Route>
       <Route path="/basket" element={<BasketPage />} />
+      <Route path="/admin" element={<AdminPage />}>
+        <Route path="" element={<ApplicationsPage />} />
+        <Route path="add" element={<AddPage />} />
+      </Route>
     </Routes>
   );
 }

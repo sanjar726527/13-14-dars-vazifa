@@ -1,8 +1,8 @@
 import React from "react";
 import { useContext } from "react";
-import { Context } from "../../context/context";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { Context } from "../../../context/context";
 
 export const BasketModal = () => {
   const [data, setData, modal, setModal, handleCLose] = useContext(Context);

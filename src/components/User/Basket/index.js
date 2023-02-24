@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { SlBasket } from "react-icons/sl";
-import { Context } from "../../context/context";
+import { Context } from "../../../context/context";
 import BasketWrapper from "./BasketWrapper";
 
 export const Basket = () => {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { MainHeader } from "../../components/MainHeader";
-import { MainNavbar } from "../../components/MainNavbar";
-import { MainTemplate } from "../../components/MainTemplate";
+import { MainHeader } from "../../components/User/MainHeader";
+import { MainNavbar } from "../../components/User/MainNavbar";
+import { MainTemplate } from "../../components/User/MainTemplate";
 import UserPageWrapper from "./UserPageWrapper";
 import { Dropdown } from "react-bootstrap";
 import { SlBasket } from "react-icons/sl";
@@ -11,8 +11,9 @@ import { TfiUser } from "react-icons/tfi";
 import { FiUser } from "react-icons/fi";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { FaFacebookF, FaInstagram, FaTelegramPlane } from "react-icons/fa";
-import { Basket } from "../../components/Basket";
-import { BasketModal } from "../../components/Basket/BasketModal";
+import { BasketModal } from "../../components/User/Basket/BasketModal";
+import { Basket } from "../../components/User/Basket";
+import logo from "../../assets/logo.png";
 
 export const UserPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -36,7 +37,9 @@ export const UserPage = () => {
       <header className="shadow">
         <div className="container">
           <div className="logo">
-            <Link to="/">Logo</Link>
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <div className="searchbar">
             <input className="form-control" type="text" placeholder="Search" />

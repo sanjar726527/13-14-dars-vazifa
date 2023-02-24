@@ -1,6 +1,7 @@
 import React from "react";
-import { ProductCard } from "../../../components/ProductsCard";
 import products from "../../../data/products";
+import { ProductCard } from "../../../components/User/ProductsCard";
+
 
 export const Drinks = () => {
   const product = products.drinks;

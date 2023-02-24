@@ -1,8 +1,5 @@
 import React from "react";
-import image from "../../assets/Rectangle.png";
-import image1 from "../../assets/Rectangle6.png";
-import image2 from "../../assets/Rectangle4.png";
-import image3 from "../../assets/Rectangle5.png";
+import image2 from "../../../assets/Rectangle4.png";
 import MainHeaderWrapper from "./MainHeaderWrapper";
 
 export const MainHeader = () => {

@@ -14,6 +14,10 @@ const UserPageWrapper = styled.section`
       align-items: center;
       .logo {
         width: max-content;
+        padding: 10px 0;
+        img{
+          height: 70px;
+        }
       }
       .searchbar {
         position: relative;
@@ -42,12 +46,14 @@ const UserPageWrapper = styled.section`
             content: none !important;
           }
           .user-avatar {
-            margin-bottom: 15px;
             border: 2px solid #000;
             padding: 1px 1px 0;
 
             border-radius: 50%;
             margin-right: 10px;
+          }
+          .user-name{
+            margin: 0;
           }
         }
       }
