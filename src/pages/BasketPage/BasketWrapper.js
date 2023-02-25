@@ -9,6 +9,10 @@ const BasketWrapper = styled.section`
       align-items: center;
       .logo {
         width: max-content;
+        padding: 10px 0;
+        img {
+          height: 70px;
+        }
       }
       .searchbar {
         position: relative;

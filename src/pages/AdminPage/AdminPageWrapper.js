@@ -35,7 +35,7 @@ const AdminPageWrapper = styled.section`
           justify-content: start;
           gap: 15px;
           text-align: start;
-          background: #fffced;
+          color: #fff;
           h5 {
             padding: 0;
             margin: 0;

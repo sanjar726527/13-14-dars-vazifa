@@ -10,6 +10,7 @@ import { SlBasket } from "react-icons/sl";
 import { TfiUser } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/context";
+import logo from "../../assets/logo.png";
 import BasketWrapper from "./BasketWrapper";
 
 export const BasketPage = () => {
@@ -51,7 +52,9 @@ export const BasketPage = () => {
       <header className="shadow">
         <div className="container">
           <div className="logo">
-            <Link to="/">Logo</Link>
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <div className="searchbar">
             <input className="form-control" type="text" placeholder="Search" />
