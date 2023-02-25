@@ -4,10 +4,48 @@ const AdminPageWrapper = styled.section`
   display: flex;
   height: 100vh;
   aside {
+    width: 400px;
     .aside-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
       img {
         width: 300px;
         height: 80px;
+      }
+      .list-group {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        a {
+          text-decoration: none;
+        }
+        .list-card {
+          transition: all 0.5s ease;
+          padding: 5px 10px;
+          &:hover {
+            background: #ffe755;
+
+            border-radius: 5px;
+          }
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 15px;
+          text-align: start;
+          background: #fffced;
+          h5 {
+            padding: 0;
+            margin: 0;
+            color: #000000d7;
+          }
+          span {
+            color: #5e6366;
+            font-size: 14px;
+          }
+        }
       }
     }
   }
@@ -18,9 +56,8 @@ const AdminPageWrapper = styled.section`
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-
         .hamburger {
+          margin-top: 20px;
           background: black;
           display: inline-block;
           position: relative;
@@ -76,7 +113,7 @@ const AdminPageWrapper = styled.section`
               border-radius: 50%;
               margin-right: 10px;
             }
-            .user-name{
+            .user-name {
               padding: 0;
               margin: 0;
             }

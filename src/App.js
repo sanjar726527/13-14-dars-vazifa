@@ -10,6 +10,9 @@ import { UserPage } from "./pages/UserPage";
 import { AdminPage } from "./pages/AdminPage";
 import { AddPage } from "./pages/AdminPages/AddPage";
 import { ApplicationsPage } from "./pages/AdminPages/ApplicationsPage";
+import { UsersPage } from "./pages/AdminPages/UsersPage";
+import { DeliveredPage } from "./pages/AdminPages/DeliveredPage";
+import { StatisticsPage } from './pages/AdminPages/StatisticsPage';
 
 function App() {
   return (
@@ -24,7 +27,10 @@ function App() {
       <Route path="/basket" element={<BasketPage />} />
       <Route path="/admin" element={<AdminPage />}>
         <Route path="" element={<ApplicationsPage />} />
+        <Route path="delivered" element={<DeliveredPage />} />
+        <Route path="statistics" element={<StatisticsPage />} />
         <Route path="add" element={<AddPage />} />
+        <Route path="users" element={<UsersPage />} />
       </Route>
     </Routes>
   );
