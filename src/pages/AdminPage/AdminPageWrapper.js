@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 const AdminPageWrapper = styled.section`
   display: flex;
-  height: 100vh;
+  
   aside {
     width: 400px;
+    min-height: 100vh;
     .aside-row {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 20px;
       text-align: center;
       img {

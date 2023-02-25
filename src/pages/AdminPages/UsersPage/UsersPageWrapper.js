@@ -14,6 +14,7 @@ const UsersPageWrapper = styled.section`
       color: #5e6366;
     }
   }
+
   .applications-table {
     .all-price {
       display: flex;
