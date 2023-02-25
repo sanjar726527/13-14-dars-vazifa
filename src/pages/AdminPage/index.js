@@ -18,7 +18,7 @@ export const AdminPage = () => {
       <aside className="p-3 shadow">
         <div className="aside-row">
           <div className="logo">
-            <Link to="/admin">
+            <Link to="/">
               <img src={logo} alt="logo" />
             </Link>
           </div>
