@@ -1,7 +1,8 @@
 import React from "react";
+import { Drinks } from "../Drinks";
 import { Salads } from "../Salads";
 import { Soups } from "../Soups";
-import { Drinks } from "../Drinks";
+
 export const AllProducts = () => {
   return (
     <div>

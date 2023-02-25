@@ -9,8 +9,8 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 import { SlBasket } from "react-icons/sl";
 import { TfiUser } from "react-icons/tfi";
 import { Link } from "react-router-dom";
-import { Context } from "../../context/context";
-import logo from "../../assets/logo.png";
+import { Context } from "../../../context/context";
+import logo from "../../../assets/logo.png";
 import BasketWrapper from "./BasketWrapper";
 
 export const BasketPage = () => {
