@@ -57,10 +57,10 @@ export const AddPage = () => {
                             onChange={handleChange}
                           />
                         </Form.Group>
-                        <button onClick={addCategory} className="btn">
-                          Qo'shish
-                        </button>
                       </Form>
+                      <button onClick={addCategory} className="btn">
+                        Qo'shish
+                      </button>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <Form>
