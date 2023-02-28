@@ -7,6 +7,16 @@ const MainNavbarWrapper = styled.section`
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+
+    .list-card {
+      background: #dedede;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: black;
+      &.active {
+        background: #ffe755;
+      }
+    }
   }
 `;
 

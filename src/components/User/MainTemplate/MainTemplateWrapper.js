@@ -9,6 +9,7 @@ const MainTemplateWrapper = styled.section`
     align-items: flex-start;
     justify-content: center;
     text-align: center;
+    width: 100%;
     .card-row {
       display: flex;
       flex-wrap: wrap;
@@ -16,6 +17,7 @@ const MainTemplateWrapper = styled.section`
       align-items: center;
       gap: 10px;
       .card {
+        width:100%;
         padding: 10px;
         position: relative;
         width: 260px;
@@ -54,7 +56,6 @@ const MainTemplateWrapper = styled.section`
       }
     }
   }
-  
 `;
 
 export default MainTemplateWrapper;

@@ -4,6 +4,7 @@ const MainHeaderWrapper = styled.section`
   background: #ffec00;
   height: 546px;
   max-width: 1444px;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
   .rows {

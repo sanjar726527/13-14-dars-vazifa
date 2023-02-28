@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Dropdown } from "react-bootstrap";
 import { FiUser } from "react-icons/fi";
 import { HiOutlineClipboardList } from "react-icons/hi";
@@ -8,11 +8,15 @@ import { RiDonutChartFill } from "react-icons/ri";
 import { BsPlusLg } from "react-icons/bs";
 import { ImCheckmark2 } from "react-icons/im";
 import { FaRegChartBar, FaUsers } from "react-icons/fa";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import AdminPageWrapper from "../AdminPage/AdminPageWrapper";
+import { LoginContext } from "../../App";
+import { HiOutlineBackspace } from "react-icons/hi";
 
 export const AdminPage = () => {
+  const { setIsLogin } = useContext(LoginContext);
+
   return (
     <AdminPageWrapper>
       <aside className="p-3 shadow">
@@ -23,7 +27,11 @@ export const AdminPage = () => {
             </Link>
           </div>
           <div className="list-group">
-            <Link to={"/admin"} className="list-card">
+            <NavLink
+              to={"home"}
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+            >
               <div className="card-icon">
                 <RiDonutChartFill size={22} color="#78909C" />
               </div>
@@ -33,8 +41,12 @@ export const AdminPage = () => {
                   Yetib kelgan arizalarni kuzatish mumkin
                 </span>
               </div>
-            </Link>
-            <Link to={"/admin/delivered"} className="list-card">
+            </NavLink>
+            <NavLink
+              to={"delivered"}
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+            >
               <div className="card-icon">
                 <ImCheckmark2 size={22} color="#78909C" />
               </div>
@@ -44,8 +56,12 @@ export const AdminPage = () => {
                   Yetkazilgan taomlar ro’yxati bilan tanishing
                 </span>
               </div>
-            </Link>
-            <Link to={"/admin/statistics"} className="list-card">
+            </NavLink>
+            <NavLink
+              to={"statistics"}
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+            >
               <div className="card-icon">
                 <FaRegChartBar size={22} color="#78909C" />
               </div>
@@ -55,8 +71,12 @@ export const AdminPage = () => {
                   Diagrammalar bilan ishlangan statistika
                 </span>
               </div>
-            </Link>
-            <Link to={"/admin/add"} className="list-card">
+            </NavLink>
+            <NavLink
+              to={"add"}
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+            >
               <div className="card-icon">
                 <BsPlusLg size={22} color="#78909C" />
               </div>
@@ -64,8 +84,12 @@ export const AdminPage = () => {
                 <h5 className="title">Qo’shish</h5>
                 <span className="text">Yangi kategoriya/taom qo’shish</span>
               </div>
-            </Link>
-            <Link to={"/admin/users"} className="list-card">
+            </NavLink>
+            <NavLink
+              to={"users"}
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+            >
               <div className="card-icon">
                 <FaUsers size={22} color="#78909C" />
               </div>
@@ -75,7 +99,7 @@ export const AdminPage = () => {
                   Rollarni biriktirishingiz mumkin
                 </span>
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </aside>
@@ -91,19 +115,26 @@ export const AdminPage = () => {
                   <TfiUser className="user-avatar" size={35} />
                   <p className="user-name">Axror</p>
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu>
-                  <Dropdown.Item href="//action-1">
+                  <Dropdown.Item href="/">
                     <FiUser className="me-2" size={20} /> Профиль
                   </Dropdown.Item>
-                  <Dropdown.Item href="//action-2">
+                  <Dropdown.Item href="/">
                     <HiOutlineClipboardList className="me-2" size={20} />
                     Мои заказы
                   </Dropdown.Item>
-                  <Dropdown.Item href="//action-3">
+                  <Dropdown.Item href="/">
                     <SlBasket className="me-2" size={20} /> Корзина
                   </Dropdown.Item>
-                  <Dropdown.Item href="//action-4">Выйти</Dropdown.Item>
+                  <Link
+                    className="dropdown-item"
+                    onClick={() => {
+                      setIsLogin(false);
+                    }}
+                    to={"/"}
+                  >
+                    <HiOutlineBackspace className="me-2" size={20} /> Выйти
+                  </Link>
                 </Dropdown.Menu>
               </Dropdown>
             </div>

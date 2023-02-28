@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const DelivererPageWrapper = styled.section`
   display: flex;
-  
+
   aside {
     width: 400px;
     min-height: 100vh;
@@ -26,10 +26,10 @@ const DelivererPageWrapper = styled.section`
         .list-card {
           transition: all 0.5s ease;
           padding: 5px 10px;
-          &:hover {
-            background: #ffe755;
+          border-radius: 5px;
 
-            border-radius: 5px;
+          &.active {
+            background: #ffe755;
           }
           display: flex;
           align-items: center;

@@ -1,57 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import StyledButton from "../../MyButton";
 import MainNavbarWrapper from "./MainNavbarWrapper";
+
+const navLinks = [
+  { to: "/user/home", text: "All" },
+  { to: "/user/salads", text: "Salads" },
+  { to: "/user/soups", text: "Soups" },
+  { to: "/user/drinks", text: "Drinks" },
+  { to: "/user/kebabs", text: "Kebabs" },
+  { to: "/user/meat-dishes", text: "Meat dishes" },
+  { to: "/user/chicken-dishes", text: "Chicken dishes" },
+  { to: "/user/fish-dishes", text: "Fish dishes" },
+  { to: "/user/vegetable-dishes", text: "Vegetable dishes" },
+];
 
 export const MainNavbar = () => {
   return (
     <MainNavbarWrapper>
       <div className="rows">
-        <Link to={"/user/"}>
-          <StyledButton>
-            <span>All</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/salads"}>
-          <StyledButton>
-            <span>Salads</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/soups"}>
-          <StyledButton>
-            <span>Soups</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/drinks"}>
-          <StyledButton>
-            <span>Soups</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/kebabs"}>
-          <StyledButton>
-            <span>Kebabs</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/meat-dishes"}>
-          <StyledButton>
-            <span>Meat dishes</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/chicken-dishes"}>
-          <StyledButton>
-            <span>Chicken dishes</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/fish-dishes"}>
-          <StyledButton>
-            <span>Fish dishes</span>
-          </StyledButton>
-        </Link>
-        <Link to={"/user/vegetable-dishes"}>
-          <StyledButton>
-            <span>Vegetable dishes</span>
-          </StyledButton>
-        </Link>
+        {navLinks.map((link, i) => {
+          return (
+            <NavLink
+              key={i}
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+              to={link.to}
+            >
+              {link.text}
+            </NavLink>
+          );
+        })}
       </div>
     </MainNavbarWrapper>
   );

@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 const AdminPageWrapper = styled.section`
   display: flex;
-  
+
   aside {
     width: 400px;
     min-height: 100vh;
     .aside-row {
       display: flex;
       flex-direction: column;
+      position: sticky;
       gap: 20px;
       text-align: center;
       img {
@@ -24,13 +25,12 @@ const AdminPageWrapper = styled.section`
           text-decoration: none;
         }
         .list-card {
+          &.active {
+            background: #ffe755;
+          }
           transition: all 0.5s ease;
           padding: 5px 10px;
-          &:hover {
-            background: #ffe755;
-
-            border-radius: 5px;
-          }
+          border-radius: 5px;
           display: flex;
           align-items: center;
           justify-content: start;

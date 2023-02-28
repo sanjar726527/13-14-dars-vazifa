@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { MainHeader } from "../../components/User/MainHeader";
 import { MainNavbar } from "../../components/User/MainNavbar";
@@ -8,15 +8,18 @@ import { Dropdown } from "react-bootstrap";
 import { SlBasket } from "react-icons/sl";
 import { BsFillArrowUpCircleFill, BsSearch } from "react-icons/bs";
 import { TfiUser } from "react-icons/tfi";
+import { HiOutlineBackspace } from "react-icons/hi";
 import { FiUser } from "react-icons/fi";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { FaFacebookF, FaInstagram, FaTelegramPlane } from "react-icons/fa";
 import { BasketModal } from "../../components/User/Basket/BasketModal";
 import { Basket } from "../../components/User/Basket";
 import logo from "../../assets/logo.png";
+import { LoginContext } from "../../App";
 
 export const UserPage = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
+  const { setIsLogin } = useContext(LoginContext);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 500) {
@@ -53,17 +56,25 @@ export const UserPage = () => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="//action-1">
+                <Dropdown.Item href="/">
                   <FiUser className="me-2" size={20} /> Профиль
                 </Dropdown.Item>
-                <Dropdown.Item href="//action-2">
+                <Dropdown.Item href="/">
                   <HiOutlineClipboardList className="me-2" size={20} />
                   Мои заказы
                 </Dropdown.Item>
-                <Dropdown.Item href="//action-3">
+                <Dropdown.Item href="/">
                   <SlBasket className="me-2" size={20} /> Корзина
                 </Dropdown.Item>
-                <Dropdown.Item href="//action-4">Выйти</Dropdown.Item>
+                <Link
+                  className="dropdown-item"
+                  onClick={() => {
+                    setIsLogin(false);
+                  }}
+                  to={"/"}
+                >
+                  <HiOutlineBackspace className="me-2" size={20} /> Выйти
+                </Link>
               </Dropdown.Menu>
             </Dropdown>
           </div>

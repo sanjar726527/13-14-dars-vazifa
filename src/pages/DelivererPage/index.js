@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Dropdown } from "react-bootstrap";
 import { FiUser } from "react-icons/fi";
-import { HiOutlineClipboardList } from "react-icons/hi";
+import { HiOutlineBackspace, HiOutlineClipboardList } from "react-icons/hi";
 import { SlBasket } from "react-icons/sl";
 import { TfiUser } from "react-icons/tfi";
 import { RiDonutChartFill } from "react-icons/ri";
 import { BsPlusLg } from "react-icons/bs";
 import { ImCheckmark2 } from "react-icons/im";
 import { FaRegChartBar, FaUsers } from "react-icons/fa";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import DelivererPageWrapper from "../DelivererPage/DelivererPageWrapper";
+import { LoginContext } from "../../App";
 
 export const DelivererPage = () => {
+  const { setIsLogin } = useContext(LoginContext);
+
   return (
     <DelivererPageWrapper>
       <aside className="p-3 shadow">
@@ -23,7 +26,11 @@ export const DelivererPage = () => {
             </Link>
           </div>
           <div className="list-group">
-            <Link to={"/deliverer"} className="list-card">
+            <NavLink
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+              to={"/deliverer/home"}
+            >
               <div className="card-icon">
                 <RiDonutChartFill size={22} color="#78909C" />
               </div>
@@ -33,8 +40,12 @@ export const DelivererPage = () => {
                   Yetib kelgan arizalarni kuzatish mumkin
                 </span>
               </div>
-            </Link>
-            <Link to={"/deliverer/delivered"} className="list-card">
+            </NavLink>
+            <NavLink
+              to={"/deliverer/delivered"}
+              className={`list-card ${(isActive) =>
+                isActive ? "active" : ""}`}
+            >
               <div className="card-icon">
                 <ImCheckmark2 size={22} color="#78909C" />
               </div>
@@ -44,7 +55,7 @@ export const DelivererPage = () => {
                   Yetkazilgan taomlar ro’yxati bilan tanishing
                 </span>
               </div>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </aside>
@@ -60,19 +71,26 @@ export const DelivererPage = () => {
                   <TfiUser className="user-avatar" size={35} />
                   <p className="user-name">Axror</p>
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu>
-                  <Dropdown.Item href="//action-1">
+                  <Dropdown.Item href="/">
                     <FiUser className="me-2" size={20} /> Профиль
                   </Dropdown.Item>
-                  <Dropdown.Item href="//action-2">
+                  <Dropdown.Item href="/">
                     <HiOutlineClipboardList className="me-2" size={20} />
                     Мои заказы
                   </Dropdown.Item>
-                  <Dropdown.Item href="//action-3">
+                  <Dropdown.Item href="/">
                     <SlBasket className="me-2" size={20} /> Корзина
                   </Dropdown.Item>
-                  <Dropdown.Item href="//action-4">Выйти</Dropdown.Item>
+                  <Link
+                    className="dropdown-item"
+                    onClick={() => {
+                      setIsLogin(false);
+                    }}
+                    to={"/"}
+                  >
+                    <HiOutlineBackspace className="me-2" size={20} /> Выйти
+                  </Link>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
