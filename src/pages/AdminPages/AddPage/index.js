@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Form, Nav, Row, Tab } from "react-bootstrap";
 import AddPageWrapper from "./AddPageWrapper";
 
 export const AddPage = () => {
+  const [newCart, setNewCart] = useState({
+    category: "",
+    image: "",
+    name: "",
+    comment: "",
+    price: "",
+  });
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setNewCart((prev) => {
+      return { ...prev, [name]: value };
+    });
+  };
+  const addCategory = () => {
+    console.log(newCart);
+  };
+
   return (
     <AddPageWrapper>
       <div className="container">
         <div className="addPage-column">
           <div className="addPage-title">
             <h2>Qo'shish</h2>
-            <span>Yangi kategoriya/taom qo’shish </span>
+            <span>Yangi kategoriya/taom qo'shish</span>
           </div>
           <div className="addPage-tabs">
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -33,12 +51,16 @@ export const AddPage = () => {
                           controlId="exampleForm.ControlInput1"
                         >
                           <Form.Control
-                            type="email"
+                            name="category"
+                            type="text"
                             placeholder="Kategoriya nomi"
+                            onChange={handleChange}
                           />
                         </Form.Group>
+                        <button onClick={addCategory} className="btn">
+                          Qo'shish
+                        </button>
                       </Form>
-                      <button className="btn">Qo’shish</button>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <Form>
@@ -46,8 +68,18 @@ export const AddPage = () => {
                           className="my-3 d-flex gap-3"
                           controlId="exampleForm.ControlInput1"
                         >
-                          <Form.Control type="text" placeholder="Rasmga yo’l" />
-                          <Form.Control type="text" placeholder="Taom nomi" />
+                          <Form.Control
+                            name="image"
+                            onChange={handleChange}
+                            type="text"
+                            placeholder="Rasmga yo’l"
+                          />
+                          <Form.Control
+                            name="name"
+                            onChange={handleChange}
+                            type="text"
+                            placeholder="Taom nomi"
+                          />
                         </Form.Group>
                         <Form.Group
                           className="mb-3"
@@ -57,13 +89,20 @@ export const AddPage = () => {
                             as="textarea"
                             placeholder="Ta’rif"
                             rows={3}
+                            name="comment"
+                            onChange={handleChange}
                           />
                         </Form.Group>
                         <Form.Group
                           className="my-5 d-flex gap-3"
                           controlId="exampleForm.ControlInput1"
                         >
-                          <Form.Control type="text" placeholder="Narxi" />
+                          <Form.Control
+                            name="price"
+                            onChange={handleChange}
+                            type="text"
+                            placeholder="Narxi"
+                          />
                           <Form.Select aria-label="Default select example">
                             <option>Kategoriya</option>
                             <option value="1">One</option>
@@ -72,7 +111,9 @@ export const AddPage = () => {
                           </Form.Select>
                         </Form.Group>
                       </Form>
-                      <button className="btn">Qo’shish</button>
+                      <button onClick={addCategory} className="btn">
+                        Qo’shish
+                      </button>
                     </Tab.Pane>
                   </Tab.Content>
                 </Col>
