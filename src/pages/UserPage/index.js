@@ -44,7 +44,7 @@ export const UserPage = () => {
               <img src={logo} alt="logo" />
             </Link>
           </div>
-          <div className="searchbar">
+          <div className="searchbar d-none d-sm-block">
             <input className="form-control" type="text" placeholder="Search" />
             <BsSearch className="search-icon" />
           </div>
